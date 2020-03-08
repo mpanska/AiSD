@@ -43,6 +43,19 @@ public class ListOfStudents {
         while (filter.hasNext())
             filter.next().setGrade(grade);
     }
+    
+    public void showFailure(){ //method to show studetns with grade less than 3
+        Predicate<Student> predicate = new Predicate<Student>() {
+            @Override
+            public boolean test(Student student) { return student.getGrade() < 3.0; }
+        };
+
+        Iterator<Student> iterator = new ArrayIterator<Student>(studentList);
+        Iterator<Student> filter = new FIterator<Student>(iterator, predicate);
+
+        while (filter.hasNext())
+            System.out.println(filter.next());
+    }
 
 
 }
