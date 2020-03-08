@@ -14,9 +14,8 @@ public class Student{
         this.grade = 0;
     }
 
-    public int getIndex() {
-        return index;
-    }
+    public int getIndex() { return index; }
+    public double getGrade() { return grade;}
 
     public void setGrade(double grade) {
         if(grade < 2.0)
